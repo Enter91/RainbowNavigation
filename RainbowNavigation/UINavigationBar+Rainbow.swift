@@ -28,6 +28,7 @@ public class Rainbow: NSObject {
         }
         set {
             if navigationView == nil {
+                let navigationBarBackgroundOriginY = navigationBar.subviews.first?.frame.origin.y ?? 0
                 navigationBar.setBackgroundImage(UIImage(), for: .default)
                 navigationBar.shadowImage = UIImage()
                 navigationView = UIView(frame: CGRect(x: 0, y: -UIApplication.shared.statusBarFrame.height - navigationBarBackgroundOriginY, width: navigationBar.bounds.width, height: navigationBar.bounds.height + UIApplication.shared.statusBarFrame.height))
