@@ -6,7 +6,7 @@ Pod::Spec.new do |s|
   s.license      = "MIT"
   s.author       = { "DanisFabric" => "danisfabric@gmail.com" }
   s.source       = { :git => "https://github.com/DanisFabric/RainbowNavigation.git"}
-  s.source_files = "RainbowNavigation/*"
+  s.source_files = "RainbowNavigation/*.{swift,h}"
   s.requires_arc = true
   s.platform     = :ios, '9.0'
 end
