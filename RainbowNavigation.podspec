@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "RainbowNavigation"
-  s.version      = "1.0"
+  s.version      = "1.1.0"
   s.summary      = "UINavigationBar Category which allows you to change its appearance dynamically"
   s.homepage     = "https://github.com/DanisFabric/RainbowNavigation"
   s.license      = "MIT"
