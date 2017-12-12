@@ -20,19 +20,19 @@ open class RainbowNavigation: NSObject, UINavigationControllerDelegate {
         dragPop.popAnimator = popAnimator
     }
     
-    open func wireTo(navigationController nc : UINavigationController) {
+    @objc open func wireTo(navigationController nc : UINavigationController) {
         self.navigationController = nc
         self.dragPop.navigationController = nc
         self.navigationController?.delegate = self
     }
     
-    open func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    @objc open func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         if operation == .pop {
             return popAnimator
         }
         return pushAnimator
     }
-    open func navigationController(_ navigationController: UINavigationController, interactionControllerFor animationController: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+    @objc open func navigationController(_ navigationController: UINavigationController, interactionControllerFor animationController: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
         
         return dragPop.interacting ? dragPop : nil
     }
