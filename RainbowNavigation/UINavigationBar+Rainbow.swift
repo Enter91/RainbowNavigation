@@ -22,7 +22,7 @@ public class Rainbow: NSObject {
     fileprivate var navigationView: UIView?
     fileprivate var statusBarView: UIView?
     
-    public var backgroundColor: UIColor? {
+    @objc public var backgroundColor: UIColor? {
         get {
             return navigationView?.backgroundColor
         }
@@ -39,7 +39,7 @@ public class Rainbow: NSObject {
             navigationView!.backgroundColor = newValue
         }
     }
-    public var statusBarColor: UIColor? {
+    @objc public var statusBarColor: UIColor? {
         get {
             return statusBarView?.backgroundColor
         }
@@ -57,7 +57,7 @@ public class Rainbow: NSObject {
             statusBarView?.backgroundColor = newValue
         }
     }
-    public func clear() {
+    @objc public func clear() {
         navigationBar.setBackgroundImage(nil, for: .default)
         navigationBar.shadowImage = nil
         
@@ -70,7 +70,7 @@ public class Rainbow: NSObject {
 }
 
 extension UINavigationBar {
-    public var rb: Rainbow {
+    @objc public var rb: Rainbow {
         get {
             if let rainbow = objc_getAssociatedObject(self, &kRainbowAssociatedKey) as? Rainbow {
                 return rainbow
